@@ -1,4 +1,4 @@
-package com.si.model;
+package com.si.mapper.pojo;
 
 import java.util.Date;
 

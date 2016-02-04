@@ -1,7 +1,7 @@
-package com.si.action;
+package com.si.mapper;
 
 /**
  * Created by wangchongbei on 16-1-26.
  */
-public class BaseAction {
+public class BaseDao {
 }

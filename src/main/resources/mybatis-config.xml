@@ -6,12 +6,14 @@
 <configuration>
 
     <settings>
-        <!-- changes from the defaults -->
+        <!--default is true 全局性设置懒加载.如果设为‘false’,则所有相关联的都会被初始化加载.-->
         <setting name="lazyLoadingEnabled" value="false"/>
     </settings>
 
     <typeAliases>
-        <typeAlias alias="User" type="com.si.model.User"/>
+        <!--<typeAlias alias="User" type="com.si.model.User"/>-->
+        <!--指定包名,mybatis自动扫描包中的类,自动定义别名,别名就是类名(首字母大小写都行)-->
+        <package name="com.si.model"/>
     </typeAliases>
 
 </configuration>

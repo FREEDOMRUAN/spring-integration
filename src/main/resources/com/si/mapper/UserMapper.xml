@@ -5,18 +5,32 @@
 注意：使用mapper代理方法开发,namespace有特殊重要的作用,namespace等于mapper接口地址
 -->
 <mapper namespace="com.si.mapper.UserMapper">
-    <insert id="insertUser" parameterType="com.si.model.User">
-        <!--
 
-                将插入数据的主键返回，返回到user对象中
-                SELECT LAST_INSERT_ID()：得到刚insert进去记录的主键值，只适用与自增主键
-                keyProperty：将查询到主键值设置到parameterType指定的对象的哪个属性
-                order：SELECT LAST_INSERT_ID()执行顺序，相对于insert语句来说它的执行顺序
-                resultType：指定SELECT LAST_INSERT_ID()的结果类型
-        -->
+    <insert id="insertUser" parameterType="User">
+        <!--将插入数据的主键返回，返回到user对象中　SELECT LAST_INSERT_ID()：得到刚insert进去记录的主键值，只适用与自增主键
+        keyProperty：将查询到主键值设置到parameterType指定的对象的哪个属性　order：SELECT LAST_INSERT_ID()执行顺序，相对于insert语句来说它的执行顺序
+        resultType：指定SELECT LAST_INSERT_ID()的结果类型-->
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">SELECT LAST_INSERT_ID()</selectKey>
         insert into user(user_name,email,gender,address,birthDay,update_date,register_date) value
         (#{userName},#{email},#{gender},#{address},#{birthDay},#{updateDate},#{registerDate})
     </insert>
+
+    <select id="findUserByParams" parameterType="java.util.Map" resultType="User">
+        SELECT id id,user_name username,email email,gender gender,address address,birthDay birthDay,update_date
+        updateDate
+        ,register_date registerDate FROM user
+        <!--          SELECT  *  FROM USER WHERE user_name LIKE  '%${value}'-->
+    </select>
+
+    <delete id="deleteUserById" parameterType="java.lang.Long">
+        DELETE  FROM  USER  WHERE id=#{id}
+    </delete>
+
+    <update id="updateUser" parameterType="User">
+      UPDATE USER SET user_name=#{userName},email=#{email},gender=#{gender},
+      address=#{address},birthDay=#{birthDay},update_date=#{updateDate},register_date=#{registerDate}
+      WHERE id=#{id}
+    </update>
+
 </mapper>
 

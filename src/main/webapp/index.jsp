@@ -7,13 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
+<head>
+    <title>Index</title>
+</head>
+<body>
 
+<a href="user/register.html">Register</a>　<br><br><br>
+<a href="user/listUsers.html">ListUsers</a> <br><br><br>
 
-
-  </body>
+</body>
 </html>

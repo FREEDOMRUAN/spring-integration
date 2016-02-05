@@ -10,6 +10,15 @@
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
+    <!--
+        使用mvc:annotation-driven代替注解映射器(org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping)
+        和注解适配器(org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter)配置
+	    mvc:annotation-driven默认加载很多的参数绑定方法,
+	    比如json转换解析器就默认加载了,如果使用mvc:annotation-driven不用配置上边的RequestMappingHandlerMapping和RequestMappingHandlerAdapter
+	    实际开发时使用mvc:annotation-driven
+
+	    注解的映射器和注解的适配器必须配对使用
+    -->
     <mvc:annotation-driven/>
 
     <context:component-scan base-package="com.si.controller"/>

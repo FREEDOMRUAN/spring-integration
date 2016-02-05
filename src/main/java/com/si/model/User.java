@@ -23,14 +23,6 @@ public class User implements Serializable {
         return userName;
     }
 
-    public Long getUserId() {
-        return id;
-    }
-
-    public void setUserId(Long id) {
-        this.id = id;
-    }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -81,5 +73,13 @@ public class User implements Serializable {
 
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

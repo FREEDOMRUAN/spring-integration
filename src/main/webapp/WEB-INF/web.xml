@@ -7,7 +7,7 @@
     <!-- 加载spring容器 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:root-context.xml</param-value>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -20,10 +20,10 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!--contextConfigLocation配置springmvc加载的配置文件(配置处理映射器,适配器等等),
         如果不配置contextConfigLocation,默认加载的是/WEB-INF/servlet_name-servlet.xml(springmvc-servlet.xml-->
-        <init-param>
+       <!-- <init-param>
              <param-name>contextConfigLocation</param-name>
              <param-value>WEB-INF/springmvc-servlet.xml</param-value>
-         </init-param>
+         </init-param>-->
     </servlet>
 
     <servlet-mapping>

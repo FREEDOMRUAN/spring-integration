@@ -30,6 +30,7 @@ public class UserController extends BaseController implements ApplicationContext
 
     private ApplicationContext applicationContext;
 
+
     @Autowired
     private UserService userService;
 
